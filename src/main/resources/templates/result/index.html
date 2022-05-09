@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Search Result</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+                <link rel="stylesheet" href="css/style.css">
+		<script src="js/result.js"></script>
+	</head>
+	<body>
+		<div class="result-container">
+			<!--Empty Search-->
+			<section th:replace="${#lists.isEmpty(productList)} ? ~{fragments/Product :: empty-search-section(product = ${product})} : ~{}"></section>
+			<!--Product Menu Panel-->
+			<section th:replace="fragments/Product :: product-menu-panel"></section>
+			<!--Product Menu-->
+			<section th:if="!${#lists.isEmpty(productList)}" th:replace="fragments/Product :: product-menu(productList = ${productList})"></section>
+			<!--Product List-->
+			<section th:if="!${#lists.isEmpty(productList)}" th:replace="fragments/Product :: product-list(productList = ${productList})"></section>
+		</div>
+	</body>
+</html>
