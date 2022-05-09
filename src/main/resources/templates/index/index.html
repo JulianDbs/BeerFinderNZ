@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Index</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/index.js"></script>
+	</head>
+	<body>
+		<div class="centered-container">
+			<div class="foreground-content">
+				<div class="tab-container">	
+					<div th:replace="fragments/chopp :: html-chopp"></div>
+					
+					<h1 class="app-title">Beer Finder N.Z.</h1>
+
+					<div th:replace="fragments/tabs :: loading-tab"></div> 
+
+					<div th:replace="fragments/tabs :: isle-tab(islands=${islands})"></div>
+
+					<div th:replace="fragments/tabs :: region-tab"></div>
+
+					<div th:replace="fragments/tabs :: location-tab"></div>
+					
+					<div th:replace="fragments/tabs :: brand-tab"></div>
+
+					<form th:replace="fragments/tabs :: form-tab"></form>
+
+					<article th:replace="fragments/tabs :: error-tab"></article> 
+				</div>
+			</div>
+
+			<div class="background-content"></div>
+		</div>
+	</body>
+</html>
