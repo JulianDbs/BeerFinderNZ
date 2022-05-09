@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<!--Isle Tab-->
+		<div class="tab-content" id="isle-tab" th:fragment="isle-tab(islands)">
+                        <a class="tab-description">Select Isle</a>
+                        <ul class="tab-list" id="isle-tab-list">  
+                                <a class="tab-button" th:each="isle : ${islands}" th:text="${isle}" th:id="${isle}"></a>
+                        </ul>
+                </div>
+		<!--Region Tab-->
+		<div class="tab-content" id="region-tab" style="display: none;" th:fragment="region-tab">
+                        <a class="tab-description">Select Region</a>
+                        <div class="tab-option-list" id="region-tab-list" th:replace="fragments/list :: region-tab-option-list"></div>
+                        <div class="tab-button-panel" id="region-tab-button-panel">
+                                <a class="tab-panel-button" id="region-tab-button-goback">Go Back</a>
+                                <a class="tab-panel-button" id="region-tab-button-next">Next</a>
+                        </div>
+                </div>
+		<!--Location Tab-->
+		<div class="tab-content" id="location-tab" style="display: none" th:fragment="location-tab">
+	                <a class="tab-description">Select Location</a>
+
+			<div th:replace="fragments/list :: location-tab-option-list"></div>			
+
+	                <div class="tab-button-panel" id="location-tab-button-panel">
+	                        <a class="tab-panel-button" id="location-tab-button-goback">Go Back</a>
+	                        <a class="tab-panel-button" id="location-tab-button-next">Next</a>
+	                </div>
+	        </div>
+		<!--Brand Tab-->
+		 <div class="tab-content" id="brand-tab" style="display: none" th:fragment="brand-tab">
+                        <a class="tab-description">Set Brand</a>
+                        <input type="text" class="tab-input" id="brand-tab-input" name="brand" minlength="4" maxlength="21" required="true" placeholder="brand..." onkeyup="checkInputLength()">
+                        <div class="tab-button-panel" id="brand-tab-button-panel">
+                                <a class="tab-panel-button" id="brand-tab-button-goback">Go Back</a>
+                                <a class="tab-panel-button" id="brand-tab-button-next">Next</a>
+                        </div>  
+                </div>
+		<!--Form Tab-->
+		<form action="/" method="post" class="form-tab" id="form-tab" style="display: none" th:fragment="form-tab">
+                        <div class="form-tab-description-panel">
+				<div class="form-tab-description-container">
+					<a class="form-tab-description">Isle</a>
+					<input readonly type="text" class="form-label" id="form-label-isle" name="isle"></input>
+				</div>
+	                        <div class="form-tab-description-container">
+					<a class="form-tab-description">Region</a>
+					<input readonly type="text" class="form-label" id="form-label-region" name="region"></input>
+				</div>
+				<div class="form-tab-description-container">
+		                        <a class="form-tab-description">City/Town</a>
+					<input readonly type="text" class="form-label" id="form-label-location" name="location"></input>
+				</div>
+				<div class="form-tab-description-container">
+		                        <a class="form-tab-description">Brand</a>
+					<input readonly type="text" class="form-label" id="form-label-brand" name="brand"></input>
+				</div>
+			</div>
+			<div class="tab-button-panel" id ="form-tab-button-panel">
+				<a class="tab-panel-button" id="form-tab-button-goback">Go Back</a>
+				<input class="tab-panel-button" id="form-tab-button-search" type="submit" value="Search">
+			</div>
+		</form>
+		<!--Loading Tab-->
+		<div class="loading-tab" id="loading-tab" style="display: none;" th:fragment="loading-tab">
+			<a class="loading-tab-external" id="loading-tab-external"></a>
+			<a class="loading-tab-internal" id="loading-tab-internal"></a>
+		</div>
+		<!--Error Tab-->
+		<article class="error-tab" id="error-tab" style="display: none;" th:fragment="error-tab">
+			<a class="error-tab-title" id="error-tab-title"></a>
+			<a class="error-tab-message" id="error-tab-message"></a>
+			<a class="error-tab-button" id="error-tab-button" onclick="window.location='/'"> New Search</a>
+		</article>
+	</body>
+</html>

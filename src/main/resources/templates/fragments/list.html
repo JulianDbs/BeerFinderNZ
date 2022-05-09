@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<!--Region List-->
+		<div class="tab-option-list" th:fragment="region-tab-option-list" id="region-tab-option-list">
+			<div class="tab-option-select" id="region-tab-option-select">
+				<div class="tab-option-list-trigger">
+					<span class="tab-current-option"  id="region-tab-current-option"></span>
+					<div class="tab-option-arrow"></div>
+				</div>
+				<div class="tab-options" id="region-tab-options"></div>
+			</div>
+			<script>
+				document.getElementById("region-tab-option-list").addEventListener("click", function() {
+					document.getElementById("region-tab-option-select").classList.toggle("open");
+				});
+
+				window.addEventListener("click", (e)=> {
+					let select = document.getElementById("region-tab-option-select");
+					if (!select.contains(e.target)) {
+						select.classList.remove("open");
+					}
+				});
+			</script>
+		</div>
+		<!--Location List-->
+		<div class="tab-option-list" th:fragment="location-tab-option-list" id="location-tab-option-list">
+			<div class="tab-option-select" id="location-tab-option-select">
+				<div class="tab-option-list-trigger">
+					<span class="tab-current-option"  id="location-tab-current-option"></span>
+					<div class="tab-option-arrow"></div>
+				</div>
+				<div class="tab-options" id="location-tab-options"></div>
+			</div>
+			<script>
+				document.getElementById("location-tab-option-list").addEventListener("click", function() {
+					document.getElementById("location-tab-option-select").classList.toggle("open");
+				});
+
+				window.addEventListener("click", (e)=> {
+					let select = document.getElementById("location-tab-option-select");
+					if (!select.contains(e.target)) {
+						select.classList.remove("open");
+					}
+				});
+			</script>
+		</div>
+
+	</body>
+</html>

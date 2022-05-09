@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<!--Product Menu Panel-->
+		<section class="product-menu-panel" th:fragment="product-menu-panel">
+			<a class="product-menu-text">New Search -></a>
+			<a class="product-menu-button" onclick="location.href='/'">Go</a>
+		</section>
+
+		<!--Product Menu-->
+		<section class="product-menu" id="product-menu" th:fragment="product-menu(productList)" th:if="!${#lists.isEmpty(productList)}">
+               	         <article th:replace="fragments/Product :: product-icon(productList = ${productList})"></article>
+                </section>
+
+		<!--Product Icon-->
+		<article class="product-icon" th:fragment="product-icon(productList)" th:each="product : ${productList}">
+			<div class="product-icon-div">
+				<img class="product-icon-image" th:src="${product.imageUrl}">
+				<a class="product-icon-button">Open</a>
+			</div>
+			<h2 class="product-icon-name" th:text="${product.name}"></h2>
+
+		</article>
+
+		<!--Product List-->
+		<section class="product-list" id="product-list" th:fragment="product-list(productList)" th:if="!${#lists.isEmpty(productList)}">
+                        <article th:replace="fragments/Product :: product-item(products = ${products})"></article>
+                </section>
+
+
+		<!--Product Item-->
+		<article class="product-item" th:fragment="product-item(products)" th:each="productList : ${products}">
+			<div th:replace="fragments/Product :: product-description(name = ${productList[0].name}, imageUrl = ${productList[0].imageUrl})"></div>
+			<!--Product Reference List-->
+			<div class="product-reference-list">
+				<div th:replace="fragments/Product :: product-reference-item(productList = ${productList})"></div>
+			</div>
+		</article> 
+
+		<!--Product Description-->
+		<div class="product-description" th:fragment="product-description(name, imageUrl)">
+			<div class="product-description-div">
+				<img class="product-description-image" th:src="${imageUrl}">
+				<a class="product-description-button">Go Back</a>
+			</div>
+			<h2 class="product-description-name" th:text="${name}"></h2>
+		</div>
+
+		<!--Product Reference Item-->
+		<div class="product-reference-item" th:fragment="product-reference-item(productList)" th:each="product : ${productList}">
+			<div class="product-reference-store-container">
+				<span class="product-reference-text">Store</span>
+				<span class="product-reference-store" th:text="${product.store}"></span>
+			</div>
+			<div class="product-reference-separator">
+				<div class="product-reference-price-container">
+					<span class="product-reference-text">Price</span>
+					<span class="product-reference-price" th:text="${ '$' + product.price}"></span>			
+				</div>
+				<a class="product-reference-button" th:href="${product.link}">View</a>
+			</div>
+		</div>
+
+		<!--Empty Search Section-->
+		<section class="empty-search-section" th:fragment="empty-search-section(product)">
+			<a class="empty-search-title">Product Not Found</a>
+			<a class="empty-search-message">Can't find</a> 
+			<span class="empty-search-beer-name" th:text="${'-> ' + product + ' <-'}"></span>
+               	</section>
+	</body>
+</html>
