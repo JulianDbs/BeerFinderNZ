@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"com.juliandbs.beerfindernz"},{"l":"com.juliandbs.beerfindernz.controllers"},{"l":"com.juliandbs.beerfindernz.entities"},{"l":"com.juliandbs.beerfindernz.repositories"},{"l":"com.juliandbs.beerfindernz.services"},{"l":"com.juliandbs.beerfindernz.tools"}]
