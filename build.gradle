@@ -26,5 +26,6 @@ tasks.named('test') {
 }
 
 javadoc {
-	detinationDir = project.file("JAVADOC")
+	destinationDir = project.file("JAVADOC")
+
 }
