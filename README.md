@@ -296,8 +296,6 @@ Extracted from the [How to Instsall and Setup PostgreSQL Server on Linux on Ubun
 Project is: _in progress_
 
 ## Room for Improvement
-Include areas you believe need improvement / could be improved. Also add TODOs for future development.
-
 Room for improvement:
 - Maori language interface support ?
 - Dark/Light theme mode ?
