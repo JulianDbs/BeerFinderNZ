@@ -12,6 +12,7 @@
 * [Fix PostgreSQL Authentication error (Linux)](#fix-postgresql-authentication-error-linux)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
+* [Contact](#contact)
 
 
 ## General Information
@@ -351,3 +352,6 @@ Room for improvement:
 To do:
 - Add filter to forbidden characters (!"#$%&...).
 - Add JUnit Tests.
+
+## Contact
+Created by [@_julian_dbs](https://twitter.com/_julian_dbs)
