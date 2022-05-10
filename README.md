@@ -19,6 +19,7 @@
 BackEnd
 - Java 11
 - Spring - version 2.6.7
+- Gradle - version 7.4.1
 - Spring Data JPA
 - Spring Web
 - Thymeleaf
