@@ -39,11 +39,16 @@ OS
 - Ubuntu 20.10
 
 ## Features
-The database of this app covers : 
+#### The database of this app covers : 
 - 15 Regions of the 16 Regions of New Zealand.
 - 91 Cities/Towns.
 - 192 Stores.
 - 4 Store Franchises : Big Barrel, FreshChoice, Super Liquor and SuperValue.
+
+#### Documented code :
+If you want to use this project as a base for your own project or just want to see how the back-end of this project is composed, you can refer to the [Javadoc documentation](./JAVADOC/index.html) in the main folder.
+![javadoc documentation](./README_IMG/javadoc_documentation_0.jpg)
+![javadoc documentation](./README_IMG/javadoc_documentation_1.jpg)
 
 ## Screenshots
 ![test screenshot 0](./README_IMG/test_application_0.jpg)
