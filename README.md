@@ -7,7 +7,7 @@
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
-* [Fix PostgreSQL Authentication error (Linux)](#fix_postgresql_authentication_error_linux)
+* [Fix PostgreSQL Authentication error (Linux)](#fix-postgresql-authentication-error-linux)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 
@@ -235,7 +235,7 @@ Extracted from the [How to Instsall and Setup PostgreSQL Server on Linux on Ubun
 ```
 ![execute sql scripts](./README_IMG/execute_sql_scripts_0.jpg)
 
-2. If you login successfully, exit from psql using the '\q' command, if you get an error go to [here](#fix-postgresql-authentication-error-linux).
+2. If you login successfully, exit from psql using the '\q' command, if you get an authentication error go [here](#fix-postgresql-authentication-error-linux).
 ```
 	app=> \q
 ```
