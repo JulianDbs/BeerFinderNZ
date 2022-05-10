@@ -7,12 +7,13 @@
 * [Features](#features)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
+* [Fix PostgreSQL Authentication error (Linux)](#fix_postgresql_authentication_error_linux)
 * [Project Status](#project-status)
 * [Room for Improvement](#room-for-improvement)
 
 
 ## General Information
-- This application was created for the ["7 Aplicaciones que debes construir - desafío de código"](https://www.youtube.com/watch?v=psSO3T7gslU) code challenge made by [Nicolás Schürmann](https://twitter.com/_nasch_) from the [HolaMundo](https://www.youtube.com/channel/UC4FHiPgS1KXkUMx3dxBUtPg) YouTube Channel.
+- This application was created for the ["7 Aplicaciones que debes construir - desafío de código"](https://www.youtube.com/watch?v=psSO3T7gslU) code challenge launched by [Nicolás Schürmann](https://twitter.com/_nasch_) from the [HolaMundo](https://www.youtube.com/channel/UC4FHiPgS1KXkUMx3dxBUtPg) YouTube Channel.
 
 ## Technologies Used
 BackEnd
@@ -234,7 +235,7 @@ Extracted from the [How to Instsall and Setup PostgreSQL Server on Linux on Ubun
 ```
 ![execute sql scripts](./README_IMG/execute_sql_scripts_0.jpg)
 
-2. If you login successfully, exit from psql using the '\q' command, if you get an error go to [here](#).
+2. If you login successfully, exit from psql using the '\q' command, if you get an error go to [here](#fix-postgresql-authentication-error-linux).
 ```
 	app=> \q
 ```
@@ -264,6 +265,44 @@ Extracted from the [How to Instsall and Setup PostgreSQL Server on Linux on Ubun
 	app=> \d
 ```
 ![execute sql scripts](./README_IMG/execute_sql_scripts_6.jpg)
+
+## Fix PostgreSQL Authentication error Linux
+If you get the "psql: error: FATAL: Peer authentication failed for user 'test'" error 
+![postgres sql error](./README_IMG/postgresql_login_as_test_error_0.jpg)
+
+You can fix it following this steps :
+
+0. Open a Terminal.
+1. Open the 'pg_hba.conf' file in the '/etc/postgresql/13/main/' directory :
+```
+	$ sudo nano /etc/postgresql/13/main/pg_hba.conf 
+```
+![postgres sql error](./README_IMG/postgresql_login_as_test_error_1.jpg)
+
+2. Find the line :
+```
+	 # local         DATABASE  USER  ADDRESS  METHOD  [OPTIONS]
+```
+![postgres sql error](./README_IMG/postgresql_login_as_test_error_2.jpg)
+
+3. and add :
+```
+	local app test  md5
+```
+![postgres sql error](./README_IMG/postgresql_login_as_test_error_3.jpg)
+
+4. Press ctrl + s to save the changes and press ctrl + x to exit.
+5. Restart the PostgreSQL service with this command :
+```
+	$ sudo systemctl restart postgresql
+```
+![postgres sql error](./README_IMG/postgresql_login_as_test_error_4.jpg)
+
+6. Get the status of the PostgreSQL service :
+```
+	$ sudo systemctl status postgresql
+```
+![postgres sql error](./README_IMG/postgresql_login_as_test_error_5.jpg)
 
 
 ## Compile and Run the Project Linux
