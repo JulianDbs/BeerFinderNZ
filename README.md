@@ -1,6 +1,8 @@
 # Beer Finder N.Z.
 > a Spring app that uses a Web Scraper tool and a PostgreSQL database to find beer in New Zealand.
 
+> Live demo [_here_](https://beerfindernz.herokuapp.com/).
+
 ## Table of Contents
 * [General Info](#general-information)
 * [Technologies Used](#technologies-used)
